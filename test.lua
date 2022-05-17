@@ -6,8 +6,7 @@ local Output_File_Name='test_output.txt'
 --	assert(not io.open(Test_File_Name),'caution overwrite!')
 io.open(Output_File_Name,'w'):close()--new
 
-do
-	print'test bat exectue command from input file:\nstart'
+do;print'test bat exectue command from input file:\nstart'
 	local h=io.popen('loop_execute_input_command_until_exit.bat < test_input.txt','w')
 	--	output to redirected file, same as in CMD
 	--	'test_input.txt' describe 'Output_File_Name' at first line
@@ -24,10 +23,9 @@ end
 print''
 
 local CommandPipe=require'CommandPipe'
-do--CommandPipe
+do;print'test "CommandPipe":\ntry to un-comment `REM` and `::` in .bat to see process.'
 	io.open(Output_File_Name,'w'):close()--new
 	----------------
-	print'test "CommandPipe":\ntry to un-comment `REM` and `::` in .bat to see process.'
 	local output=nil--stdout (console)
 	--	(un)comment to try other output stream
 	--	nil: stdout, false: nul
@@ -52,11 +50,11 @@ world, waiting
 goodbye
 ]])
 	print'result OK'
-end
-print''
-do
-	print'test time cost:'
-	local count=5--loop to test time spend
+end;print''
+
+do print'test time cost:'
+	local count=50--loop to test time spend
+	print('when repeat '..count..' times.')
 	local startTime
 	--------basic popen cost	--------
 	startTime=gettime()
@@ -80,7 +78,7 @@ do
 		command_pipe('echo '..index..' >>'..Output_File_Name)
 	end
 	command_pipe()--equal `command_pipe'exit'`.
-	print('command pipe: ',gettime()-startTime)
+	print('command pipe method: ',gettime()-startTime)
 	
 --	os.remove(Test_File_Name)
 	

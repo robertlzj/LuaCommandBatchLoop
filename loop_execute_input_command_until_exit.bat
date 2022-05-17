@@ -13,7 +13,7 @@ REM		necessary, otherwise var inherited from environment
 
 :start
 REM 	repeat until 'exit' command
-::echo start, waiting
+echo ^>(re)start, waiting input:
 for /F "tokens=*" %%a in ('findstr /n "^"') do (
 	REM 	wait (block) until input stream finish - EOF
 	REM			when using CMD, Ctrl-Z will mark '^Z' [SUB] (EOF) signal
@@ -22,13 +22,13 @@ for /F "tokens=*" %%a in ('findstr /n "^"') do (
   set "line=!line:*:=!"
 	REM		remove '<number>:' in var 'line' in place
   if "!line!"=="exit" goto stop
-	REM echo(command parsed: "!line!".
+	REM echo(^>command parsed: "!line!".
 	if [!filename_to_receive_output!]==[] (
 		REM can't use `if not defined..`.
 		set filename_to_receive_output=!line!
 		setlocal EnableDelayedExpansion
 		REM		necessary here after assignment
-		REM @echo output to: !filename_to_receive_output!.
+		@echo ^>output to: !filename_to_receive_output!.
 	) else (
 		REM space `else (` necessary
 		REM echo execute
@@ -42,14 +42,14 @@ for /F "tokens=*" %%a in ('findstr /n "^"') do (
 	endlocal
 	REM can't use call or break, will broke handing input pipe
 )
-echo input finish
+echo ^>input finish.
 REM		echo when in interactive under CMD
 REM		end of line
 goto start
 exit /b
 
 :exec_command
-	::echo(command received in sub: "%~1".
+	echo(^>command to execute: "%~1".
 	3>>!filename_to_receive_output! 1>>&3 %~1
 	exit /b
 
