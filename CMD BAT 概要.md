@@ -206,5 +206,4 @@ CMD BAT 概要[windows - Command to run a .bat file - Stack Overflow](https://st
 
 检索关键词index：cmd command batch, findstr find, stdin input, redirect pipe, read write dynamic realtime, flush refresh buffer, block wait hang, control character signal, Ctrl-D ^D, Ctrl-Z ^Z
 
-纪念下过程，目的向导，七零八碎的拼凑起来，测试完善，但仍不够系统..
-![image-20220517012408479](CMD BAT 概要.assets/image-20220517012408479.png)![image-20220517012430946](CMD BAT 概要.assets/image-20220517012430946.png)
+纪念下过程，目的向导，七零八碎的拼凑尝试，但仍不够系统..

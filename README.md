@@ -87,7 +87,7 @@ traditional method: 	0.15064239501953
 >command to execute: "echo 3 >>test_output.txt".
 >command to execute: "echo 4 >>test_output.txt".
 >command to execute: "echo 5 >>test_output.txt".
-command pipe m: 	0.14091825485229
+command pipe method: 	0.14091825485229
 test done
 
 all finish
@@ -97,4 +97,4 @@ all finish
 
 ## 其他
 
-<a name="CMD-BAT-概要.md">CMD BAT 概要.md</a>是知识笔记
+<a name="CMD-BAT-概要.md"></a>[CMD BAT 概要.md](.\CMD BAT 概要.md)是知识笔记
